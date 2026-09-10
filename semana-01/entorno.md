@@ -165,30 +165,6 @@ las dependencias a `~/.m2`; una segunda corrida baja de un minuto.
 
 Captura: `capturas/p5-build-fernandez.png`
 
-### Paso 6 — App levantada y usada
-
-Arranque desde la carpeta del proyecto clonado:
-
-```
-> java -jar target\spring-petclinic-4.0.0-SNAPSHOT.jar
-```
-
-(equivalente: `.\mvnw.cmd spring-boot:run`). Servidor en `http://localhost:8080`.
-Uso como recepcionista de la clínica:
-
-- **Find owners** con el apellido `Davis` → resultados de la búsqueda.
-- Ficha del dueño **Harold Davis** → `http://localhost:8080/owners/4`: dirección
-  `563 Friendly St.`, ciudad `Windsor`, teléfono `6085553198`, con su mascota `Iggy`
-  (tipo `lizard`, nacida el `2010-11-30`) y la sección *Pets and Visits* todavía sin visitas.
-- Los datos coinciden con la carga inicial `src/main/resources/db/h2/data.sql`
-  (línea 28 del insert de `owners`, línea 40 del insert de `pets` con `owner_id = 4`),
-  lo que confirma que la base H2 en memoria se pobló al arrancar.
-- Lista de veterinarios: `http://localhost:8080/vets.html`.
-
-Captura: `capturas/p6-owner-fernandez.png` — ficha de Harold Davis.
-
----
-
 ## Integrante: Franz Joe Inga Champi — 20231302G
 
 Máquina: Windows 10 (build 10.0.19045) · terminal CMD.
@@ -253,6 +229,29 @@ Mismo resultado que Rodríguez y Fernández (74 pruebas, 0 fallos) con JDK 21. E
 Captura: `capturas/p5-build-inga.png`
 
 ---
+
+### Paso 6 — App levantada y usada
+
+```
+> java -jar target\spring-petclinic-4.0.0-SNAPSHOT.jar
+...
+Started PetClinicApplication in 11.188 seconds (process running for 12.192)
+```
+
+Servidor en `http://localhost:8080`. Uso como recepcionista de la clínica:
+
+- **Find owners** (apellido vacío) → lista completa de dueños.
+- Ficha del dueño 3 (Eduardo Rodriquez, McFarland) → `http://localhost:8080/owners/3`.
+- Se registró una **visita** a la mascota "Jewel": fecha `2026-09-10`, descripción
+  "Esterilización"; la visita aparece luego en la ficha.
+- Lista de veterinarios: `http://localhost:8080/vets.html`.
+
+Captura: `capturas/p6-owner-rodriguez.png` — ficha de Eduardo Rodriquez con la visita del `2026-09-10`
+y la barra de direcciones visible (`localhost:8080/owners/3`).
+Respuesta HTML cruda del servidor para esa pantalla: `capturas/owners-3-response.html` (HTTP 200).
+
+---
+
 
 ## Paso 2 — Git y repositorio del equipo
 

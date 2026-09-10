@@ -97,7 +97,7 @@ Respuesta HTML cruda del servidor para esa pantalla: `capturas/owners-1-response
 
 ---
 
-## Integrante: Yazid Fernández — _(código UNI: completar)_
+## Integrante: Yazid Fernández — 20224085D
 
 Máquina: Windows 11 Pro · terminal CMD/PowerShell.
 
@@ -171,11 +171,6 @@ Captura: `capturas/p5-build-fernandez.png`
 - Paso 3 (Maven): `mvn -v` → _pegar salida_ · captura `capturas/p3-maven-APELLIDO.png`
 - Paso 5 (build): líneas `Tests run` / `BUILD SUCCESS` / `Total time` → _pegar_ · captura `capturas/p5-build-APELLIDO.png`
 
-## Integrante 4 — _(completar)_
-
-- Paso 1 (JDK): … · `capturas/p1-jdk-APELLIDO.png`
-- Paso 3 (Maven): … · `capturas/p3-maven-APELLIDO.png`
-- Paso 5 (build): … · `capturas/p5-build-APELLIDO.png`
 
 ---
 

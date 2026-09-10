@@ -7,9 +7,8 @@ Semana 01 — Entorno listo y autopsia de un sistema real (Spring PetClinic).
 | Nombre y apellido | Código UNI | Usuario GitHub |
 |---|---|---|
 | Jhostin Leonardo Rodríguez Neyra | 20231145I | xleao |
-| Yazid Fernández D. | _(completar)_ | Y2605 |
-| _(integrante 3 — completar)_ | _(completar)_ | _(completar)_ |
-| _(integrante 4 — completar)_ | _(completar)_ | _(completar)_ |
+| Yazid Elio Fernández Dueñas | 20224085D | Y2605 |
+| Franz Joe Inga Champi | 20231302G | francito69 |
 
 ## Repositorio
 

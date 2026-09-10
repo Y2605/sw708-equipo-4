@@ -187,10 +187,6 @@ Uso como recepcionista de la clínica:
 
 Captura: `capturas/p6-owner-fernandez.png` — ficha de Harold Davis.
 
-> Pendiente: la captura está recortada al contenido, sin la barra de direcciones que pide
-> la guía, y no registré ninguna visita. Falta repetir la pantalla con la URL visible y
-> dar de alta una visita a `Iggy` desde *Add Visit*.
-
 ---
 
 ## Integrante: Franz Joe Inga Champi — 20231302G

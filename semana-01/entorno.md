@@ -165,12 +165,68 @@ las dependencias a `~/.m2`; una segunda corrida baja de un minuto.
 
 Captura: `capturas/p5-build-fernandez.png`
 
-## Integrante 3 — _(completar)_
+## Integrante: Franz Joe Inga Champi — 20231302G
 
-- Paso 1 (JDK): `java -version` / `javac -version` → _pegar salida_ · captura `capturas/p1-jdk-APELLIDO.png`
-- Paso 3 (Maven): `mvn -v` → _pegar salida_ · captura `capturas/p3-maven-APELLIDO.png`
-- Paso 5 (build): líneas `Tests run` / `BUILD SUCCESS` / `Total time` → _pegar_ · captura `capturas/p5-build-APELLIDO.png`
+Máquina: Windows 10 (build 10.0.19045) · terminal CMD.
 
+### Paso 1 — JDK
+
+```
+C:\Users\admin>java -version
+java version "21.0.10" 2026-01-20 LTS
+Java(TM) SE Runtime Environment (build 21.0.10+8-LTS-217)
+Java HotSpot(TM) 64-Bit Server VM (build 21.0.10+8-LTS-217, mixed mode, sharing)
+
+C:\Users\admin>javac -version
+javac 21.0.10
+```
+
+`java` y `javac` responden la misma versión → es un **JDK**, no un JRE. Es el JDK 21 LTS,
+la versión recomendada por la guía.
+
+Captura: `capturas/p1-jdk-inga.png`
+
+### Paso 3 — Maven
+
+```
+C:\Users\admin>mvn -v
+Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
+Maven home: C:\apache-maven\apache-maven-3.9.16
+Java version: 21.0.10, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk-21.0.10
+Default locale: es_PE, platform encoding: UTF-8
+OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
+```
+
+La línea `Java version: 21.0.10` confirma que Maven usa el JDK del paso 1.
+
+Captura: `capturas/p3-maven-inga.png`
+
+### Paso 4 — IDE
+
+**Visual Studio Code** con el *Extension Pack for Java* de Microsoft; reconoce
+`spring-petclinic` como proyecto Maven.
+
+### Paso 5 — Construcción de PetClinic
+
+Clonado **fuera** de la carpeta de la entrega
+(`C:\26-ii\SW708U Arquitectura de Soluciones de Software\PetClinic\spring-petclinic`)
+y construido con el wrapper:
+
+```
+> .\mvnw.cmd clean package
+
+[INFO] Tests run: 74, Failures: 0, Errors: 0, Skipped: 2
+[INFO] Analyzed bundle 'petclinic' with 22 classes
+[INFO] Building jar: ...\PetClinic\spring-petclinic\target\spring-petclinic-4.0.0-SNAPSHOT.jar
+[INFO] BUILD SUCCESS
+[INFO] Total time:  02:58 min
+[INFO] Finished at: 2026-09-09T23:05:05-05:00
+```
+
+Mismo resultado que Rodríguez y Fernández (74 pruebas, 0 fallos) con JDK 21. El tiempo
+(02:58 min) corresponde a la primera construcción, con descarga de dependencias.
+
+Captura: `capturas/p5-build-inga.png`
 
 ---
 
@@ -204,5 +260,15 @@ yazid.fernandez.d@uni.pe
 > (`yazid.ferdandez.d@uni.pe`). Ya está corregido en `git config`; los commits
 > anteriores quedan así para no reescribir la historia del repositorio compartido.
 
+Franz Inga:
+
+```
+> git config --global user.name
+Franz Inga
+> git config --global user.email
+franz.inga.c@uni.pe
+```
+
 Repositorio del equipo: `https://github.com/Y2605/sw708-equipo-4` (propietario: Y2605).
-Falta: captura de Settings → Collaborators con los integrantes → `capturas/p2-collaborators.png`.
+Los 3 integrantes están agregados como colaboradores con permiso de escritura.
+Captura: `capturas/p2-collaborators.png`.

@@ -103,12 +103,73 @@ Respuesta HTML cruda del servidor para esa pantalla: `capturas/owners-1-response
 
 ---
 
-## Integrante: _(apellido: Fernández — completar nombre y código)_
+## Integrante: Yazid Fernández — _(código UNI: completar)_
 
-Capturas ya subidas: `capturas/p1-jdk-ferdandez.png`, `capturas/p3-maven-fernandez.png`,
-`capturas/p5-build-fernandez.png`.
-Falta: pegar aquí las salidas de `java -version` / `javac -version`, `mvn -v` y las líneas
-`Tests run` / `BUILD SUCCESS` / `Total time` de tu build.
+Máquina: Windows 11 Pro · terminal CMD/PowerShell.
+
+### Paso 1 — JDK
+
+```
+C:\Users\yazid>java -version
+java version "17.0.12" 2024-07-16 LTS
+Java(TM) SE Runtime Environment (build 17.0.12+8-LTS-286)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.12+8-LTS-286, mixed mode, sharing)
+
+C:\Users\yazid>javac -version
+javac 17.0.12
+```
+
+`java` y `javac` responden la misma versión, así que es un **JDK**, no un JRE. La guía
+pide 17 o superior: 17.0.12 LTS es exactamente el mínimo y cumple.
+
+Captura: `capturas/p1-jdk-fernandez.png`
+
+### Paso 3 — Maven
+
+```
+C:\Users\yazid>mvn -v
+Apache Maven 3.9.10 (5f519b97e944483d878815739f519b2eade0a91d)
+Maven home: C:\Program Files\apache-maven-3.9.10
+Java version: 17.0.12, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk-17
+Default locale: es_PE, platform encoding: Cp1252
+OS name: "windows 11", version: "10.0", arch: "amd64", family: "windows"
+```
+
+La línea `Java version: 17.0.12` confirma que Maven usa el JDK del paso 1.
+
+Captura: `capturas/p3-maven-fernandez.png`
+
+### Paso 4 — IDE
+
+**Visual Studio Code** con el *Extension Pack for Java* de Microsoft; reconoce
+`spring-petclinic` como proyecto Maven. Comandos de lectura usados: ir a la definición
+(F12), buscar referencias (Shift+F12), esquema del archivo (Ctrl+Shift+O).
+
+### Paso 5 — Construcción de PetClinic
+
+Clonado **fuera** de la carpeta de la entrega (`C:\Users\yazid\Downloads\spring-petclinic`)
+y construido con el wrapper:
+
+```
+> git clone https://github.com/spring-projects/spring-petclinic.git
+> cd spring-petclinic
+> .\mvnw.cmd clean package
+
+[INFO] Tests run: 74, Failures: 0, Errors: 0, Skipped: 2
+[INFO] --- jacoco:0.8.15:report (report) @ spring-petclinic ---
+[INFO] Analyzed bundle 'petclinic' with 22 classes
+[INFO] Building jar: C:\Users\yazid\Downloads\spring-petclinic\target\spring-petclinic-4.0.0-SNAPSHOT.jar
+[INFO] BUILD SUCCESS
+[INFO] Total time:  07:30 min
+[INFO] Finished at: 2026-09-09T17:21:14-05:00
+```
+
+Mismo resultado que el de Rodríguez (74 pruebas, 0 fallos) con distinto JDK (17 frente a
+24): el build no depende de la versión concreta mientras cumpla el mínimo. El tiempo mayor
+(07:30 min contra 40 s) es porque esta fue la primera construcción y Maven descargó todas
+las dependencias a `~/.m2`; una segunda corrida baja de un minuto.
+
+Captura: `capturas/p5-build-fernandez.png`
 
 ## Integrante 3 — _(completar)_
 
@@ -126,6 +187,8 @@ Falta: pegar aquí las salidas de `java -version` / `javac -version`, `mvn -v` y
 
 ## Paso 2 — Git y repositorio del equipo
 
+Jhostin Rodríguez:
+
 ```
 > git --version
 git version 2.47.0.windows.2
@@ -136,5 +199,21 @@ Jhostin Leonardo Rodriguez Neyra
 jhostin.rodriguez.n@uni.pe
 ```
 
-Repositorio del equipo: `https://github.com/Y2605/sw708-equipo-4`
+Yazid Fernández:
+
+```
+> git --version
+git version 2.48.1.windows.1
+
+> git config --global user.name
+Yazid Fernandez
+> git config --global user.email
+yazid.fernandez.d@uni.pe
+```
+
+> Nota: los commits del 2026-09-09 salieron con el correo mal escrito
+> (`yazid.ferdandez.d@uni.pe`). Ya está corregido en `git config`; los commits
+> anteriores quedan así para no reescribir la historia del repositorio compartido.
+
+Repositorio del equipo: `https://github.com/Y2605/sw708-equipo-4` (propietario: Y2605).
 Falta: captura de Settings → Collaborators con los integrantes → `capturas/p2-collaborators.png`.

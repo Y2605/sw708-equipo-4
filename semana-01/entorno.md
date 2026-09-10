@@ -91,11 +91,9 @@ Servidor en `http://localhost:8080`. Uso como recepcionista de la clínica:
   "Vacuna antirrábica"; la visita aparece luego en la ficha.
 - Lista de veterinarios: `http://localhost:8080/vets.html`.
 
-Captura: `capturas/p6-owner.png` — ficha de George Franklin con la visita del `2026-12-15`.
+Captura: `capturas/p6-owner.png` — ficha de George Franklin con la visita del `2026-12-15`
+y la barra de direcciones visible (`localhost:8080/owners/1`).
 Respuesta HTML cruda del servidor para esa pantalla: `capturas/owners-1-response.html` (HTTP 200).
-
-> Nota: la `p6-owner.png` muestra la página pero no la barra de direcciones del navegador.
-> Si el profe lo exige literal, recapturar incluyendo la barra con `http://localhost:8080/owners/1`.
 
 ---
 

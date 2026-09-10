@@ -87,19 +87,13 @@ Servidor en `http://localhost:8080`. Uso como recepcionista de la clínica:
 
 - **Find owners** (apellido vacío) → lista completa de dueños.
 - Ficha del dueño 1 (George Franklin, Madison) → `http://localhost:8080/owners/1`.
-- Se registró una **visita** a la mascota "Leo": fecha `2026-12-01`, descripción
-  "Vacuna antirrábica anual" (`POST /owners/1/pets/1/visits/new` → 302; la visita
-  aparece luego en la ficha).
-- Lista de veterinarios: `http://localhost:8080/vets.html` (6 vets; especialidades
-  radiology / surgery / dentistry).
+- Se registró una **visita** a la mascota "Leo": fecha `2026-12-15`, descripción
+  "Vacuna antirrábica"; la visita aparece luego en la ficha.
+- Lista de veterinarios: `http://localhost:8080/vets.html`.
 
-Captura: `capturas/p6-owner-1-rodriguez.png`.
-Respuesta HTML cruda del servidor para esa pantalla: `capturas/owners-1-response.html`
-(HTTP 200; se ve `George Franklin`, `Madison`, la mascota `Leo` y la visita del `2026-12-01`).
-
-> La `p6-owner-1-rodriguez.png` se tomó con Chrome en modo headless, así que no muestra
-> la barra de direcciones. La guía la pide con la URL visible → conviene reemplazarla por
-> una captura normal del navegador con `http://localhost:8080/owners/1` a la vista.
+Captura: `capturas/p6-owner.png` — ficha de George Franklin con la visita del `2026-12-15`
+y la barra de direcciones visible (`localhost:8080/owners/1`).
+Respuesta HTML cruda del servidor para esa pantalla: `capturas/owners-1-response.html` (HTTP 200).
 
 ---
 

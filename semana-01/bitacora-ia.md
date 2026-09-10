@@ -2,14 +2,30 @@
 
 ## ¿En qué usé la IA?
 
-Solo para **orientarme al principio** en un código que no conocía: una explicación
-general de PetClinic (paquetes, para qué sirve cada uno, cómo se atiende una petición)
-que me sirviera de mapa de arranque **antes** de leer el código a fondo.
+La usé como herramienta de apoyo, en cosas puntuales:
 
-**Todo lo demás lo hice yo leyendo el repositorio**: la tabla de paquetes y dependencias
-(paso 7), los roles dentro de `owner`, el recorrido de `GET /owners/1` clase por clase
-(paso 8), el diagrama de componentes (paso 9) y esta verificación. La IA **no** escribió
-ninguna de esas partes; aquí solo la uso como fuente a contrastar.
+- **Orientación inicial**: una explicación general de PetClinic (qué paquetes tiene, para
+  qué sirve cada uno, cómo se atiende una petición) para tener un mapa de arranque antes
+  de leer el código a fondo. Es la respuesta que se verifica más abajo.
+- **Conceptos de Spring/JPA que no teníamos claros**: qué hace `JpaRepository`, qué
+  significan `@OneToMany(cascade = ALL)` y `fetch = EAGER`, para qué sirve un `Formatter`,
+  qué es un *runtime hint*. Preguntas sueltas para entender lo que estábamos leyendo.
+- **Mensajes raros de la consola**: por qué Maven con JDK 24 imprime el warning de
+  `jansi`, y por qué el build daba 74 tests en vez de los ~53 de la guía (rama sobre
+  Spring Boot 4).
+- **Sintaxis de Mermaid** para poder escribir el diagrama del paso 9 dentro del Markdown.
+- **Recordar comandos** de Git y cómo lanzar el `.jar` en PowerShell (Windows).
+- **Pulir la redacción** de algunas respuestas (el contenido y las decisiones son
+  nuestras; la IA solo ayudó a dejarlas más claras).
+
+**Lo que NO hicimos con IA** (lo hicimos leyendo el repositorio en el IDE):
+
+- La tabla de paquetes y la columna "depende de" (mirando los `import` de cada clase).
+- Agrupar las 11 clases de `owner` en roles.
+- El recorrido de `GET /owners/1` clase por clase con "ir a la definición".
+- El diagrama de componentes (qué cajas y qué flechas son ciertas).
+- La decisión de qué es *estructural* y qué es *acabado*.
+- Esta verificación afirmación por afirmación.
 
 IA consultada: asistente de IA (ChatGPT / Claude), respondiendo **sin acceso al
 repositorio**. Fecha: 2026-09-09.
